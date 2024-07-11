@@ -1,0 +1,6 @@
+.resultContainer {
+    border: 1px solid black;
+    width: 90%;
+    max-width: 1000px;
+    height: 40px;
+}
