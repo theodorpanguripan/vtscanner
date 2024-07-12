@@ -4,3 +4,20 @@
     max-width: 1000px;
     height: 40px;
 }
+
+.scanPageContainer {
+    flex-direction: column;
+    font-size: 20px;
+    width: 50%;
+}
+
+.body {
+    height: 100%;
+    width: 100%; 
+}
+
+@media only screen and (max-width: 1024px) {
+    .scanPageContainer {
+        width: 80%;
+    }
+}
