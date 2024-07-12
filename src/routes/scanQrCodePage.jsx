@@ -74,7 +74,7 @@ function ScanQrCodePage() {
                 </div>
                 <div>QR Info:</div>
                 <div className="resultContainer">
-                    <div style={{marginTop: "5px", marginBottom: "5px", marginLeft: "10px"}}>Test</div>
+                    <div style={{marginTop: "5px", marginBottom: "5px", marginLeft: "10px"}}>{result}</div>
                 </div>
                 <div className="scannerContainer" style={{marginTop: "50px"}}>
                     <div id="reader" ></div>
