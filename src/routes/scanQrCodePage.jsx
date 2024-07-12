@@ -69,7 +69,7 @@ function ScanQrCodePage() {
     return(
         <div className="alignCenter">
             <div className="scanPageContainer">
-                <div style={{marginBottom: "40px", marginTop: "150px"}}>
+                <div style={{marginBottom: "40px"}}>
                     <Link to="/">Back</Link>
                 </div>
                 <div>QR Info:</div>
