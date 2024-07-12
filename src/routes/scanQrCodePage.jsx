@@ -38,18 +38,23 @@ function ScanQrCodePage() {
    
 
     useEffect(() => {
-        const scanner = new Html5Qrcode('test');
+        const scanner = new Html5Qrcode('reader');
+        let qrboxFunction = function(viewfinderWidth, viewfinderHeight) {
+            let minEdgePercentage = 0.9; // 70%
+            let minEdgeSize = Math.min(viewfinderWidth, viewfinderHeight);
+            let qrboxSize = Math.floor(minEdgeSize * minEdgePercentage);
+            return {
+                width: qrboxSize,
+                height: qrboxSize
+            };
+        }
         const config = {
-            qrbox: {
-                width: 200,
-                height: 200
-            },
+            qrbox: qrboxFunction,
             fps: 5,
             aspectRatio: 1.0
         };
 
         const qrCodeSuccessCallback = (decodedText) => {
-            scanner.stop();
             setResult(decodedText);
         };
 
@@ -62,13 +67,18 @@ function ScanQrCodePage() {
     
 
     return(
-        <div className="body alignCenter">
+        <div className="alignCenter">
             <div className="scanPageContainer">
-                <Link to="/">Back</Link>
+                <div style={{marginBottom: "40px", marginTop: "150px"}}>
+                    <Link to="/">Back</Link>
+                </div>
                 <div>QR Info:</div>
-                <div className="resultContainer">{result}</div>
-                <div className="scannerContainer"></div>
-                <div id="test"></div>
+                <div className="resultContainer">
+                    <div style={{marginTop: "5px", marginBottom: "5px", marginLeft: "10px"}}>Test</div>
+                </div>
+                <div className="scannerContainer" style={{marginTop: "50px"}}>
+                    <div id="reader" ></div>
+                </div> 
             </div>
         </div>
        
